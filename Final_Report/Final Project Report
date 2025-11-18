@@ -1,0 +1,453 @@
+# **Netflix Movie Performance Analytics (2010–2025)**
+
+---
+
+**Madhukar Goli**  
+**SID : 989501269**
+MS - Business Analytics, University of the Pacific 
+MSBA - 285 - Capstone Project 1  
+Instructor: Dylan Bernardi  
+ Date: May 01, 2025.
+
+---
+## **Introduction**
+
+The evolution of the entertainment industry, fueled by the rise of streaming platforms like Netflix, has drastically changed content production and consumption patterns. As competition intensifies, understanding the financial performance of movies becomes essential for optimizing content strategies and investment decisions.
+This project, titled "Netflix Movie Performance Analytics (2010–2025)," aims to provide data-driven insights into the factors influencing movie success on Netflix.
+By leveraging a cleaned Netflix movie dataset integrated with metadata fields such as budget, revenue, genre, popularity, and ROI (Return on Investment), we seek to uncover patterns that can guide future production, marketing, and release strategies for streaming content.
+
+## Research Question and Approach
+
+### Research Question
+> **What factors contribute most significantly to the financial success of Netflix movies between 2010 and 2025, and how can these insights inform strategic content decisions?**
+
+More specifically:
+- How do genre, budget, and popularity correlate with ROI?
+- Are there specific release years or trends that impacted movie profitability?
+- Which countries and genres consistently yield higher returns?
+
+### Approach
+1. **Data Collection and Cleaning:**
+   - Merged Netflix movie datasets with external metadata sources (e.g., TMDb).
+   - Cleaned and standardized fields including budget, revenue, genres, production countries, release year, popularity, and computed fields like ROI and profit.
+
+2. **Data Storage and Querying:**
+   - Uploaded the cleaned dataset into **Google BigQuery**.
+   - Defined clear schema with appropriate data types for efficient querying.
+
+3. **Exploratory Data Analysis (EDA):**
+   - Performed SQL-based exploratory queries to identify trends, correlations, and outliers.
+   - Focused on genre distribution, ROI patterns, popularity impact, and country-based performance.
+
+4. **Data Visualization:**
+   - Built dynamic, interactive dashboards using **Grafana**.
+   - Created panels showing key metrics like:
+     - Total number of movies
+     - ROI trends over time
+     - Genre-based revenue efficiency
+     - Popularity vs ROI
+     - Hidden gem identification (low popularity, high ROI)
+
+5. **Insight Generation:**
+   - Interpreted visualizations to generate business insights.
+   - Highlighted strategic patterns such as optimal genres, timing for releases, and high-efficiency production regions.
+
+---
+
+# **Introduction of the Dataset**
+
+The dataset captures Netflix movie performance data from 2010 to 2025, including title, genres, country, language, release year, vote count, popularity, budget, revenue, ROI, profit, and efficiency. The data was cleaned using Python and enriched through TMDb API calls. This enabled a comprehensive analysis of financial trends, genre success, and viewer engagement signals.
+
+# **Dataset**:
+
+![ Dataset used ](NETFLIX_ANALYSIS/dashboard_screenshots/dataset_screenshot/screenshot_2025-04-26_015236.png)
+
+# **Literature Review**
+
+Research shows genre choice, localization strategies, and viewer engagement metrics are critical for success. Documentary and Music genres often outperform mainstream genres in ROI. Language localization (French, Spanish, Japanese) improves ROI. Viewer behavior signals like votes and popularity align moderately with profitability but are not direct predictors (Statista, 2024; Ying et al., 2023; Smith et al., 2023).
+
+
+# **Financial Constraints and Adoption Challenges**
+
+- **High Content Production Costs**: Significant upfront investments are required without guaranteed returns.
+- **Market Competition**: Bidding wars for premium content inflate costs.
+- **Localization Barriers**: Additional costs for language and cultural customization.
+- **Viewer Churn Risk**: Risk of subscription cancellations if content quality dips.
+
+Financial discipline and selective investment are critical.
+
+ **Digital Transformation and Strategic Implementation**
+
+- **Data-Driven Content Decisions**
+- **Automated Infrastructure**
+- **Strategic Localization**
+- **Agile Strategic Shifts**
+
+Digital transformation integrates analytics into every stage of content lifecycle management.
+
+ **ROI Measurement and Sustainable Growth**
+
+- **Cost per Viewing Hour (CPVH)**
+- **Lifetime Value of Subscribers (LTV)**
+- **ROI Beyond Revenue**
+- **Sustainability Strategies**
+
+Sustainable growth requires a multidimensional ROI perspective.
+
+# **Descriptive methodology of Project:**
+ 
+ The dataset was cleaned and enriched to ensure analytical accuracy and completeness.
+Key steps included:
+
+**Python-Based Cleaning:**
+Duplicate records were removed, missing values were imputed, and inconsistent language and country fields were standardized using Python automation scripts.
+
+**TMDb API Enrichment:**
+Missing metadata such as budget, revenue, genres, and vote counts were retrieved via TMDb API calls, enhancing the dataset's depth and reliability.
+
+**Feature Engineering:**
+New calculated fields — ROI, Profit, and Efficiency — were introduced to better measure financial performance beyond basic revenue numbers.
+
+**Dataset Finalization**:
+After cleaning and enrichment, a refined dataset of 15,485 Netflix movies spanning 2010 to 2025 was created, ready for visualization, trend analysis, and predictive modeling.
+
+This methodological approach enabled a detailed, reliable exploration of financial trends, genre-specific success patterns, and viewer engagement signals critical for strategic insights.
+
+# **Dashboard Overview**
+
+The Grafana dashboard features 15 panels narratively exploring Netflix movie success factors, including:
+
+- Content Volume and Trends
+- ROI Trends
+- Genre Efficiency
+- Country-wise and Language-wise Success
+- Viewer Behavior Signals
+- Hidden Gems Discovery
+- Predictive KPI Analysis
+- Animated Genre Growth
+
+**Grafana Dashboards Overview**
+
+![Panel 1 and 2](NETFLIX_ANALYSIS/dashboard_screenshots/panel_overview/screenshot_2025-04-26_015741.png)
+![Panel 3](NETFLIX_ANALYSIS/dashboard_screenshots/panel_overview/screenshot_2025-04-26_015828.png)
+![Panel 4 and 5](NETFLIX_ANALYSIS/dashboard_screenshots/panel_overview/screenshot_2025-04-26_015915.png)
+![Panel 6](NETFLIX_ANALYSIS/dashboard_screenshots/panel_overview/screenshot_2025-04-26_020004.png)
+![Panel 7 and 8](NETFLIX_ANALYSIS/dashboard_screenshots/panel_overview/screenshot_2025-04-26_020120.png)
+![Panel 9 and 10](NETFLIX_ANALYSIS/dashboard_screenshots/panel_overview/screenshot_2025-04-26_020200.png)
+![Panel 11 and 12](NETFLIX_ANALYSIS/dashboard_screenshots/panel_overview/screenshot_2025-04-26_020250.png)
+![Panel 13 and 14](NETFLIX_ANALYSIS/dashboard_screenshots/panel_overview/screenshot_2025-04-26_020342.png)
+![Panel 15](NETFLIX_ANALYSIS/dashboard_screenshots/panel_overview/screenshot_2025-04-26_020426.png)
+
+
+**Built using BigQuery and Grafana for dynamic visual storytelling.**
+## Grafana Dashboard Model
+
+The visualization of Netflix movie performance analytics was built using a dynamic Grafana dashboard.  
+The dashboard integrates with the dataset stored in **Google BigQuery** under the schema:
+
+> **Schema Name:** `netflix_analysis_2010_2025_public`
+
+The Grafana dashboard JSON model was exported for replication and reference purposes.
+
+> **Grafana Model File:** `netflix_dashboard_model.json`
+
+### Description:
+- The dashboard visualizes key metrics such as:
+  - Total number of movies analyzed
+  - ROI trends over time
+  - Genre-wise performance distribution
+  - Country-wise ROI leaders
+  - Popularity vs ROI relationships
+  - Hidden gems with high ROI but lower popularity
+- Each panel was customized to allow dynamic filtering and drill-down for better user interactivity.
+
+### Access Instructions:
+- Import the `netflix_dashboard_model.json` file into Grafana.
+- Configure the data source to point to the BigQuery project and dataset (`netflix_analysis_2010_2025_public`).
+- The dashboard will render automatically with all predefined panels and visualizations.
+
+---
+
+
+# **Schema**
+
+| Column Name | Data Type | Description |
+|:------------|:----------|:------------|
+| title | STRING | Movie title |
+| genres | STRING | Associated movie genres |
+| production_countries | STRING | Country where movie was produced |
+| original_language | STRING | Original language code |
+| release_year | INTEGER | Year of release |
+| vote_count | INTEGER | Audience votes received |
+| popularity | FLOAT | Popularity index score |
+| budget | FLOAT | Production cost in USD |
+| revenue | FLOAT | Total revenue generated |
+| roi | FLOAT | Return on Investment (revenue/budget) |
+| profit | FLOAT | Profit earned (revenue - budget) |
+| efficiency | FLOAT | ROI scaled relative to budget |
+
+**Dataset From BigQuery**:
+- 1.Netflix_Analysis_2010_2025_updated_private
+
+![Netflix_Analysis_2010_2025_updated_private](NETFLIX_ANALYSIS/dashboard_screenshots/big_query_screenshots/screenshot_2025-04-26_021354.png)
+
+- 2.Netflix_Analysis_2010_2025_updated_public
+
+![Netflix_Analysis_2010_2025_updated_public](NETFLIX_ANALYSIS/dashboard_screenshots/big_query_screenshots/screenshot_2025-04-26_021528.png)
+
+# **Data Cleaning**
+
+Duplicate removal, missing value imputation, language and country standardization, and creation of ROI, profit, and efficiency columns were performed using Python.
+
+Final cleaned dataset: **15,485 Records of Movies**.
+
+![Dataset Cleaning Script and Final Dataset](NETFLIX_ANALYSIS/dashboard_screenshots/dataset_screenshot/screenshot_2025-04-26_021835.png)
+
+! [ Dataset ](NETFLIX_ANALYSIS/Dashboard_Screenshots/Dataset_Screenshot/Screenshot_2025-04-26_015247.png)
+
+# **Panel Overviews**
+
+## **1. Total Movies Overview**
+Shows total number of Netflix movies analyzed (15,485 unique titles).
+![Total Movies in Dataset](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-25_235751.png)
+
+## Description about the panel:
+This panel visualizes the total volume of Netflix movies analyzed over the period from 2010 to 2025, establishing the study’s dataset scale (15,485 unique titles). It provides a foundational view of Netflix’s content expansion across years.
+
+## **2. ROI Over Time**
+Tracks ROI trends across different years with key spikes identified.
+
+![ROI Over Time](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_001018.png)
+
+## Description about the panel:
+This panel tracks the trend of Return on Investment (ROI) across release years. It highlights periods of high profitability and volatility, revealing strategic shifts and external impacts such as the pandemic surge in 2020.
+
+## **3. Genre Distribution**
+Breakdown by genre: Drama, Comedy, and Thriller dominate, but Documentary and Music yield better ROI.
+
+![Genre Distribution](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_000452.png)
+
+## Description about the panel:
+The Genre Distribution panel reveals the frequency of different genres across Netflix’s catalog. While Drama, Comedy, and Thriller dominate in volume, the panel hints that volume alone does not correlate directly with financial success.
+
+
+## **4. Country-wise ROI Leaders**
+Highlights top countries by average ROI (e.g., UK, Belgium, China).
+![Country-wise ROI Leaders](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_001452.png)
+
+## Description about the panel:
+This panel ranks countries by average ROI of produced content. Countries like the United Kingdom, Belgium, and China outperform traditional production leaders, suggesting regional production strategies yield high returns.
+
+## **5. Country-wise Movie Success**
+Shows success rate variance by country.
+![Country-wise Movie Success](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_001758.png)
+
+## Description about the panel:
+This panel measures success rates of movies originating from different countries. It uncovers that smaller markets often achieve disproportionately higher ROI relative to production volume, offering strategic localization opportunities.
+
+## **6. Language-wise Performance**
+Performance based on movie's original language.
+![Content Language Performance Panel](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_002146.png)
+
+## Description about the panel:
+Here, movie success is analyzed by original language. Although English dominates in number, languages such as French, Spanish, and Japanese exhibit strong profitability and audience approval relative to their smaller volumes.
+
+## **7. Genre Efficiency (ROI per Genre)**
+Measures financial returns per dollar invested across genres.
+![Genre Efficiency (ROI per Genre)](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_002426.png)
+
+## Description about the panel:
+This panel measures financial efficiency by genre, showing which genres deliver the highest ROI per dollar invested. Documentary, Music, and Biography genres emerge as the most financially efficient content categories.
+
+## **8. Genre Performance (Viewer Ratings)**
+Average user ratings by genre.
+![Genre Performance](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_002756.png)
+
+## Description about the panel:
+This visualization compares viewer ratings across genres. While Drama and Comedy have high volumes, genres like Animation, Biography, and History secure the highest average user satisfaction scores, indicating strong audience approval.
+
+## **9. Predicted ROI (ML Model Panel)**
+ROI predicted based on popularity and vote count using BigQuery ML.
+![Predicted ROI Based on Popularity and Vote Count](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_004037.png)
+
+## Description about the panel:
+Using BigQuery ML, this panel predicts ROI based on a movie’s popularity and vote count. It visualizes clustering behavior where moderate-to-high popularity and substantial vote counts align with better financial outcomes.
+
+## **10. Animated Genre Growth Over Time**
+Shows Netflix's genre diversification year-by-year.
+![Animated Genre Growth Over time](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_003058.png)
+
+## Description about the panel:
+A dynamic time-series visualization showcasing how Netflix’s genre portfolio diversified year-by-year between 2010 and 2025. Rapid growth phases, especially between 2013 and 2016, reflect strategic content expansion initiatives.
+
+## **11. Top Rated Titles**
+Lists highest-rated Netflix movies.
+![Animated Time-Series: Netflix Genre Growth](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_003336.png)
+
+## Description about the panel:
+This panel lists Netflix’s highest-rated titles according to user votes. It highlights critically acclaimed successes that contribute to Netflix’s brand reputation and subscriber loyalty.
+
+## **12. Hidden Gems (High Rating, Low Popularity)**
+Strategic opportunities identified.
+![Underrated Gems (High Rating, Low Popularity)](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_003655.png)
+
+## Description about the panel:
+This panel identifies "hidden gem" movies that achieved high user ratings but low popularity. These titles present strategic opportunities for Netflix to promote existing quality content without heavy investment in new productions.
+
+## **13. Popularity vs ROI Correlation**
+Shows moderate correlation with notable outliers.
+![Popularity vs ROI (Correlation Insight)](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_004037.png)
+
+## Description about the panel:
+A scatter plot comparing popularity scores against ROI, revealing that while there is a moderate positive correlation, popularity alone does not guarantee financial success. Several outliers highlight the importance of deeper engagement metrics.
+
+## **14. Budget vs ROI Efficiency (Top 15 Titles)**
+Lower budget movies outperform high-budget productions.
+![Budget vs ROI Efficiency Panel (Top 15)](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_004518.png)
+
+## Description about the panel:
+This analysis compares movie budgets with ROI efficiency. Surprisingly, lower-budget movies often outperform high-budget productions in terms of return, emphasizing the importance of budget control in maximizing financial outcomes.
+
+## **15. Predictive Content Signals (KPI Summary)**
+
+Highlights thresholds:
+- Vote Count > 700
+- Popularity > 20
+- ROI > 170%
+
+![Predictive Content Signals (KPI Summary)](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_004828.png)
+
+## Description about the panel:
+This panel establishes predictive KPI thresholds — including Vote Count > 700, Popularity > 20, and ROI > 170% — to assess a movie’s likelihood of success. Titles meeting these benchmarks show a significantly higher chance of delivering strong financial returns.
+
+# **General Questions and Insights**
+
+# **Key Insights**:
+- Documentary and Music genres deliver best ROI.
+- Localization boosts profitability.
+- Popularity does not guarantee profitability.
+- Hidden gems present marketing opportunities.
+
+# **Genre Distribution's Influence on Returns**:
+- Documentary, Music, and Biography genres outperform mainstream genres.
+- Niche genre investment improves profitability.
+
+# **Factors Contributing to ROI**:
+- Vote Count and Popularity Baselines
+- Budget Control
+- Genre and Language Alignment
+- Strategic Release Timing
+
+# **Underperforming Areas**:
+- Large-budget action films.
+- Western and War genres.
+- Romantic comedies.
+
+
+# **Experimental ML-Based ROI Prediction**
+
+Exploratory BigQuery ML model using popularity and vote count to predict ROI showed moderate alignment.
+
+![Predicted ROI Based on Popularity and Vote Count](NETFLIX_ANALYSIS/dashboard_screenshots/individual_panels/screenshot_2025-04-26_004037.png)
+
+# Popularity vs ROI Correlation
+
+## Overview
+This panel analyzes the relationship between a movie’s **popularity score** and its **Return on Investment (ROI)**.  
+Each dot on the scatter plot represents a movie, plotted based on its popularity (x-axis) and ROI (y-axis).
+
+---
+
+## Key Insights
+- **Weak correlation observed:**  
+  The scatter plot shows that **high popularity does not consistently lead to high ROI**. Many movies with **low to moderate popularity** still achieve **very strong ROI**.
+  
+- **Outliers:**  
+  - A few titles have extremely high ROI despite relatively low popularity scores.
+  - Some highly popular movies have modest ROI, indicating that **popularity alone isn't a reliable predictor of profitability**.
+
+- **Distribution:**  
+  - Most movies are clustered at lower popularity and ROI values.
+  - There is a wide vertical spread at low popularity scores, suggesting that **good ROI can happen without major popularity**.
+
+- **Strategic Implication:**  
+  - Netflix and content producers should **focus more on content quality, cost control, and niche audience targeting** rather than purely chasing hype.
+  - **Data-driven greenlighting strategies** could lead to higher investment success compared to hype-driven ones.
+
+---
+
+## Interpretation
+- **Hype ≠ Profit:**  
+  While a movie may generate significant public attention, that doesn't guarantee it will be financially efficient.
+
+- **Investment Prioritization:**  
+  Netflix
+
+# Key Findings
+
+**Genre, Country, and Language Impact**:
+- Documentary, Music, and Biography genres dominate ROI.
+- UK, Belgium, and India perform better than the US.
+- French, Japanese, and Spanish languages outperform English in adjusted returns.
+
+**Strong Performers**:
+- Documentary Films
+- Music-Based Content
+- Biographical Dramas
+
+**KPI Thresholds for Success**:
+
+| KPI Metric | Threshold |
+|:-----------|:----------|
+| Vote Count | > 700 votes |
+| Popularity Score | > 20 points |
+| ROI | > 170% |
+
+**Strategic Insight**:
+Genre selection, localization, and KPI-based screening optimize profitability.
+
+# Recommendations
+
+1. **Invest More in High-ROI Genres**
+2. **Promote Hidden Gems**
+3. **Expand Localized Content Strategies**
+4. **Apply KPI-Based Project Screening**
+
+**Strategic Vision**: 
+Sustainability demands harmonizing creativity with data-driven investment strategies.
+
+
+# Conclusion
+
+Netflix's journey from 2010 to 2025 showcases the power of:
+
+- Genre diversification
+- International expansion
+- Data-driven content strategies
+
+Key success drivers include genre selection, localization strategies, and KPI-based evaluations.
+
+Future growth depends on experimental content formats, regional diversification, and predictive analytics to guide content investment.
+
+
+# Project Files
+
+- **Cleaned Dataset**: Netflix_Analysis_2010_2025_Updated.csv
+
+- **Grafana Dashboard JSON**: netflix_dashboard_model.json
+
+- **Final Presentation**: Netflix Movie Performance Analytics.pdf
+
+- **Python Cleaning Script**: Netflix_Analysis_Cleaner.py
+
+
+
+# References
+
+- Statista. (2024). [Genre trends in streaming](https://www.statista.com/topics/4299/video-streaming/)
+
+- Smith, J., Johnson, R., & Lee, P. (2023). [Viewer behavior and profitability in streaming platforms](https://www.tandfonline.com/journals/mjec20)
+
+- Ying, L., Zhao, M., & Chen, Y. (2023). [Localization strategies and content success](https://journals.sagepub.com/home/ics)
+
+---
