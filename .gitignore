@@ -1,0 +1,5 @@
+*.key
+service-account.json
+service-account-*.json
+secrets/
+env/
