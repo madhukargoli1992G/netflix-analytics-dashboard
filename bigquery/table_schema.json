@@ -1,0 +1,122 @@
+[
+  {
+    "name": "show_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Unique identifier for each show or movie."
+  },
+  {
+    "name": "type",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Type of title, such as 'Movie' or 'TV Show'."
+  },
+  {
+    "name": "title",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Title name of the movie or TV show."
+  },
+  {
+    "name": "director",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Name of the director of the movie or show."
+  },
+  {
+    "name": "cast",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "List of main actors featured in the movie or show."
+  },
+  {
+    "name": "country",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Country where the movie or show was primarily produced."
+  },
+  {
+    "name": "date_added",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Date the title was added to Netflix (YYYY-MM-DD as text)."
+  },
+  {
+    "name": "release_year",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Year the movie or show was originally released."
+  },
+  {
+    "name": "rating",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Age classification or content rating assigned to the title."
+  },
+  {
+    "name": "duration",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Length of the movie or show in minutes."
+  },
+  {
+    "name": "genres",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Genres associated with the title, such as Drama or Comedy."
+  },
+  {
+    "name": "language",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Primary language of the title."
+  },
+  {
+    "name": "description",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Brief summary or synopsis of the movie or show."
+  },
+  {
+    "name": "popularity",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Popularity score of the title based on audience activity."
+  },
+  {
+    "name": "vote_count",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Total number of user votes received."
+  },
+  {
+    "name": "vote_average",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Average user rating on a 0–10 scale."
+  },
+  {
+    "name": "budget",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Production budget of the movie in US dollars."
+  },
+  {
+    "name": "revenue",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Total box office revenue generated in US dollars."
+  },
+  {
+    "name": "profit",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Financial profit calculated as revenue minus budget."
+  },
+  {
+    "name": "roi",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Return on investment (ROI), calculated as profit divided by budget."
+  }
+]
