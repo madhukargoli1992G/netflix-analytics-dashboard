@@ -205,4 +205,4 @@ Multi-dataset dashboard configuration
 Madhukar Goli
 📍 MSBA Graduate Student, University of the Pacific
 📊 Data Analyst | SQL | BigQuery | Python | Cloud Analytics
-🔗 LinkedIn: (Add your link here)
+🔗 LinkedIn: (https://www.linkedin.com/in/madhukargoli/)
